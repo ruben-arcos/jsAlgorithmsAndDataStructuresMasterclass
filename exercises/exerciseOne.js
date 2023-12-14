@@ -77,3 +77,5 @@ function validAnagram(first, second) {
 }
 
 console.log(validAnagram('kayak', 'kayak')) // true
+console.log(validAnagram('some', 'same')) // true
+
