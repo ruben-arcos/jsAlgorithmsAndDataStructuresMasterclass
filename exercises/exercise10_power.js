@@ -7,15 +7,29 @@
     // power(2,4) // 16
 */
 
-function power(base, exponent){
-    if (exponent === 0) {
-        return 1
-    }
-    
+function power(base, exponent) {
+  if (exponent === 0) {
+    return 1;
+  }
 
-    let result = base;
-    for (let i = 1; i < exponent; i++) {
-        result *= base;
-    }
-    return result
+  let result = base;
+  for (let i = 1; i < exponent; i++) {
+    result *= base;
+  }
+  return result;
 }
+
+console.log(power(2,0))
+console.log(power(2,2))
+console.log(power(2,4))
+
+// SOLUTION 2
+
+function power2(base, exponent) {
+  if (exponent === 0) return 1;
+  return base * power2(base, exponent - 1);
+}
+
+console.log(power2(3, 0));
+console.log(power2(3, 2));
+console.log(power2(3, 4));
