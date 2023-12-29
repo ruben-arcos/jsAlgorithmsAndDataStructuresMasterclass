@@ -8,6 +8,27 @@
           fib(10) // 55
           fib(28) // 317811
           fib(35) // 9227465
+
+        Notes:
+
+            * In mathematics, the Fibonacci numbers are the numbers in the following integer sequence, called the Fibonacci sequence, and characterized by the fact that every number after the first two is the sum of the two preceding ones
+
+            * Depending on the chosen starting point of the sequence (0 or 1) the sequence would look like this:
+
+                1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …
+
+                or this:
+
+                0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, …
+            
+            * FUN FACT: Fibonacci sequence, also known as the Golden Ratio, appears a lot in nature. Patterns such as spirals of shells, curve of waves, seed heads, pinecones, and branches of trees can all be described using this mathematical sequence. The fact that things as large as spirals of galaxies, and as small as DNA molecules follow the Golden Ratio rule suggests that Fibonacci sequence is one of the most fundamental characteristics of the Universe.
+
+            * In the context of arrays and sequences in programming, indices typically start at 0. So, if you're looking for the Fibonacci number at index 4, you would be referring to the value at position 4 in the sequence.
+            
+            * Let's break it down for the Fibonacci sequence:
+                Index:  0, 1, 2, 3, 4, 5, 6,  7,  8,  9, 10, ...
+                Value:  0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...
+
 */
 
 function fib(num) {
