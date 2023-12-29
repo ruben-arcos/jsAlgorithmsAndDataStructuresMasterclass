@@ -44,3 +44,27 @@ console.log(fib2(11)); // 89
 console.log(fib2(29)); // 514229
 console.log(fib2(34)); // 5702887
 
+// Solution 3
+
+function fib3(num) {
+    // Base case: if num is 0 or 1, return num
+    if (num < 1) {
+        return num
+    }
+
+    // Initialize an array to store Fibonacci values, starting with the base cases
+    let fibValues = [0, 1] 
+
+    // This loop starts from index 2 and calculates Fibonacci numbers up to the specified index num
+    for (let i = 2; i <= num; i++) {
+        // Calculate the next Fibonacci number by adding the last two numbers in the array
+        fibValues[i] = fibValues[i - 1] + fibValues[i - 2]
+    }
+    // Return the Fibonacci value at the specified index num
+    return fibValues[num]
+}
+
+console.log(fib3(6)); // 8
+console.log(fib3(12)); // 144
+console.log(fib3(25)); // 75025
+console.log(fib3(30)); // 832040
