@@ -11,16 +11,16 @@
 */
 
 function reverse(str) {
-    // Base case: if the length of the string is 1, return the string as is
-    if(str.length === 1) {
-        return str
-    }
-    // Recursive step to reverse the string
-    return str[str.length -1] + reverse(str.split(0, -1))
+  // Base case: if the length of the string is 1, return the string as is
+  if (str.length === 1) {
+    return str;
+  }
+  // Recursive step to reverse the string
+  return str[str.length - 1] + reverse(str.split(0, -1));
 }
 
-console.log(reverse('awesome'))  // 'emosewa'
-console.log(reverse('rithmschool')) // 'loohcsmhtir'
+console.log(reverse("awesome")); // 'emosewa'
+console.log(reverse("rithmschool")); // 'loohcsmhtir'
 
 /**
  * Explanation of this line --> return str[str.length - 1] + reverse(str.slice(0, -1));
@@ -38,7 +38,18 @@ console.log(reverse('rithmschool')) // 'loohcsmhtir'
  
     * Putting it all together:
         The entire return statement concatenates the last character of the original string with the result of the recursive call to reverse on the string without the last character.
- */
+*/
 
+// Solution 2
+function reverse2(str) {
+  // Base case: if the length of the string is less than or equal to 1, return the string as is
+  if (str.length <= 1) {
+    return str;
+  }
+  // Recursive step to reverse the string
+  return reverse2(str.slice(1)) + str[0];
+}
 
-
+console.log(reverse2("Barcelona"));
+console.log(reverse2("Tokyo"));
+console.log(reverse2("Istanbul"));
