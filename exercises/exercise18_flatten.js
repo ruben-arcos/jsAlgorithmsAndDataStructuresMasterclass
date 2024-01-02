@@ -10,17 +10,24 @@
             flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]) // [1,2,3
 */
 
-function flatten(arr){
-    if (arr.length === 0) {
-        return false;
+function flatten(arr) {
+  let flattenedArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      // If the element is an array, recursively flatten it
+      flattenedArray = flattenedArray.concat(flatten(arr[i]));
+    } else {
+      // If the element is not an array, add it to the flattened array
+      flattenedArray.push(arr[i]);
     }
-    if (arr.pop()) {
-        return true
-    }
-    return flatten(arr)
+  }
+  return flattenedArray;
 }
 
-console.log(flatten([1, 2, 3, [4, 5] ])) // [1, 2, 3, 4, 5]
-console.log(flatten([1, [2, [3, 4], [[5]]]])) // [1, 2, 3, 4, 5]
-console.log(flatten([[1],[2],[3]])) // [1,2,3]
-console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])) // [1,2,3
+// Test cases
+console.log(flatten([1, 2, 3, [4, 5]])); // [1, 2, 3, 4, 5]
+console.log(flatten([1, [2, [3, 4], [[5]]]])); // [1, 2, 3, 4, 5]
+console.log(flatten([[1], [2], [3]])); // [1, 2, 3]
+console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]])); // [1, 2, 3]
+
