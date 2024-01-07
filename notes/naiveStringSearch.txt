@@ -1,0 +1,16 @@
+Naive String Search
+
+* Suppose you want to count the number of times a smaller string appears in a longer string
+* A straightforward approach involves checking pairs of characters individually
+
+Imagine we have this string
+'Harold said haha in Hamburg'
+
+If we were searching for the letter 'i' can be done with linear search
+
+Example:
+ Long string:                        Short string:
+ wowomgzomg                    omg
+                 omg
+
+2 matches found
