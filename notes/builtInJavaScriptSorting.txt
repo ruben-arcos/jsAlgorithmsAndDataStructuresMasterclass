@@ -1,0 +1,51 @@
+JavaScript has a sort method
+...but it doesn't always work the way you expect
+
+                                🙂
+['Arcos', 'Ruben', 'Data Structures', 'Algorithms'].sort();
+// ['Algorithms', 'Arcos', 'Data Structures', 'Ruben']
+
+                                😭
+                        [6,4,15,10].sort();
+                        // [10, 15, 4, 6]
+
+The default sort order is according to string Unicode code points
+Unicode is used to represent strings. And what happens is that 
+every item that array is converted to a string and then the 
+Unicode value of that is taken and then they're sorted.
+
+Telling JavaScript how to sort
+    * The build-in sort method accepts an optional
+    comparator function
+    * You can use this comparator function to tell JavaScript
+    how you want it to sort
+    * The comparator looks at pairs of elements (a and b),
+    determines their sort order based on the return value
+        * If it returns a negative number a should come before b
+        * If it returns a positive number, a should come after b
+        * If it returns 0(zero), a and b are the same as far as the sort is concerned
+
+    Examples:
+
+        function numberCompare(num1, num2) {
+            return num1 - num2
+        }
+
+        [6,4,15,10].sort(numberCompare) // [4,6,10,15]
+
+        // Descending order
+         function numberCompare(num1, num2) {
+            return num2 - num1
+        }
+
+        [6,4,15,10].sort(numberCompare) // [15,10,6,4]
+
+        function compareByLen(str1, str2) {
+            return str1.length - str2.length;
+        }
+
+        ['Arcos', 'Ruben', 'Data Structures', 'Algorithms'].sort(compareByLen);
+        // ['Arcos', 'Ruben', 'Algorithms', 'Data Structures'].sort();
+
+
+
