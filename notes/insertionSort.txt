@@ -19,3 +19,13 @@ Insertion Sort
 
     // Take the final element (②) and insert it in the correct spot in the sorted section
     [1️⃣, 2️⃣, 3️⃣, 4️⃣, 5️⃣]
+
+    1. Insertion sort time complexity is O(n²): 
+        * Where 'n' is the number of elements in the array. The algorithm has nested loops, which can result in quadratic time complexity.
+    
+    2. Insertion sort only good for:
+        * Nearly sorted data: Insertion sort performs well when the data is already partially sorted. In such cases, it can have a linear time complexity, making it more efficient compared to its worst-case time complexity.
+
+        * When data is coming in live or streaming: Insertion sort can be useful in scenarios where data is received incrementally, and you need to insert new elements into a sorted structure quickly. Its adaptive nature can be advantageous in such situations.
+
+
