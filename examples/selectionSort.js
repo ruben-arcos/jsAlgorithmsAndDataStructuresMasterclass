@@ -39,3 +39,31 @@ function selectionSort(arr) {
 }
 
 console.log(selectionSort([0, 2, 34, 22, 10, 19, 17]));
+
+// ES2015 solution
+
+function selectionSort2(arr) {
+    // Define a swap function that takes an array and two indices, and swaps the elements at those indices
+    const swap = (arr, idx1, idx2) => ([arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]])
+
+    // Iterate through each element in the array for sorting
+    for (let i = 0; i < arr.length; i++) {
+        // Assume the current index is the lowest (for now)
+        let lowest = i;
+
+        // Iterate through the rest of the array to find the index of the smallest element
+        for (let j = i + 1; j < arr.length; j++) {
+            // If a smaller element is found, update the lowest index
+            if(arr[lowest] > arr[j]) {
+                lowest = j;
+            }
+        }
+        // If the current index is not the same as the found lowest index, perform a swap
+        if (i !== lowest) swap(arr, i, lowest)
+    
+    }
+    // Return the sorted array
+    return arr
+}
+
+console.log(selectionSort2([0, 1, 12, 34, 22, 10, 19, 17]));
