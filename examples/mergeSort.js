@@ -7,7 +7,7 @@
 */
 
 // Define a function named mergeSort that takes two arrays as parameters
-function mergeSort(array1, array2) {
+function mergeArrays(array1, array2) {
   // Initialize an empty array to store the sorted result
   let sortedArray = [];
   // Initialize indices for array1 and array2
@@ -48,4 +48,4 @@ function mergeSort(array1, array2) {
 }
 
 // Call the mergeSort function
-console.log(mergeSort([1, 10, 50], [2, 14, 99, 100]));
+console.log(mergeArrays([1, 10, 50], [2, 14, 99, 100]));
