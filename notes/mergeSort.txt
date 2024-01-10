@@ -1,0 +1,40 @@
+Merge Sort
+
+    * Created in 1948
+    * It's a combination of three things - splitting, sorting and merging
+    * Exploits the fact that arrays of 0 or 1 element are always sorted
+    * Works by decomposing an array into smaller arrays of 0 to 1
+      elements, then building up a newly sorted array. Thats something 
+      known as a divide and conquer approach
+
+    How does it work?
+
+                                  [ 8, 3, 5,4 ,7, 6, 1, 2 ]
+                                                ⬇
+                                  start by splitting in ½
+                         [ 8, 3, 5, 4 ]              [ 7, 6, 1, 2 ] 
+                                                ⬇
+         split in ½ again since we're still not at 0 or 1 elements
+                     [ 8, 3 ]      [ 5, 4 ]       [ 7, 6 ]      [ 1, 2 ]
+                                                 ⬇
+        split again and now we have eight single element arrays
+                 [ 8]  [ 3 ]   [ 5 ]   [ 4 ]   [ 7 ]   [ 6 ]   [ 1 ]   [ 2 ]
+                     ↘   ↙️         ↘   ↙️   ⬇    ↘   ↙️           ↘   ↙️ 
+           merge them back together, basically by comparing 
+                    the numbers. the smallest goes first
+                     [ 3, 8 ]      [ 4, 5 ]       [ 6, 7 ]      [ 1, 2 ]
+                                                 ⬇ 
+                                     repeat the process
+                         [ 3, 4, 5, 8 ]              [ 1, 2, 6, 7 ]
+                                                ⬇ 
+                                          final merge
+                               [ 1, 2, 3, 4, 5, 6, 7, 8]
+
+    Merging Arrays 
+        * In order to implement merge sort, it's useful to first implement a 
+          function responsible for merging two sorted arrays
+        * Given two arrays which are sorted, this helper function should
+           create a new array which is also sorted, and consists of all of the 
+           elements in the two input arrays
+        * This function should run in O(n + m) time and O(n + m) space 
+          and should not modify the parameters passed to it
