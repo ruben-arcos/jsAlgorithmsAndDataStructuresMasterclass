@@ -38,3 +38,14 @@ Merge Sort
            elements in the two input arrays
         * This function should run in O(n + m) time and O(n + m) space 
           and should not modify the parameters passed to it
+
+  More insights:
+    As the array size increases, more space needs to be allocated, presenting a tradeoff. Initially, one might think the memory complexity is O(n log(n)), considering the depth of the call stack as O(log(n)) and storage allocation for each level of the stack relative to the array size (n). However, a more insightful explanation clarifies this misconception.
+
+    In reality, although each mergeSort call triggers two recursive calls, only one of them is executed at a time. The first call completes before the second begins, leading to the exploration of only one branch of the recursive tree at any given moment. This 'call stack' represents this single branch.
+
+    The depth of the recursion tree is at most log(n), meaning the height of the call stack is at most log(n). So, how much memory is allocated on the call stack, at most, during this exploration?
+
+    Starting at the bottom of the call stack, there's an array of size n. Above that is an array of size n/2, then n/4, and so on.
+
+    Therefore, the total size of the call stack is at most n + n/2 + n/4 + ... which is less than 2n. Hence, the memory complexity is at most O(2n), but in the big picture, this simplifies to O(n).
