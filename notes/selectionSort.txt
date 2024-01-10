@@ -1,0 +1,53 @@
+Selection Sort
+
+Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position
+
+Example:
+
+// First
+
+[5,3,4,1,2]
+ ↑ ↑ 3 is the min value
+
+[5,3,4,1,2]
+ ↑    ↑ 3 still the min value 
+
+[5,3,4,1,2]
+ ↑       ↑ 1 is the new min 
+
+[5,3,4,1,2]
+ ↑          ↑  1 is still the min value
+
+[1,3,4,5,2]
+ ↑       ↑  now we swap 5 with 1 since 1 is the smallest value
+
+// Second
+
+[1,3,4,5,2]
+    ↑ ↑ 3 is the min value
+[1,3,4,5,2]
+    ↑    ↑ 3 still the min value 
+[1,3,4,5,2]
+    ↑       ↑ 2 is the new min 
+[1,2,4,5,3]
+    ↑       ↑  now we swap 3 with 2 since 2 is the smallest value
+
+// Third
+
+[1,2,4,5,3]
+       ↑ ↑ 4 is the min value
+[1,2,4,5,3]
+       ↑    ↑ 3 is now the min value 
+[1,2,3,5,4]
+    ↑       ↑ now we swap 4 with 3 since 3 is the smallest value
+
+
+// Fourth
+
+[1,2,3,5,4]
+          ↑ ↑ 4 is the min value
+[1,2,3,4,5]
+       ↑    ↑ now we swap 5 with 4 since 4 is the smallest value
+
+
+ 
