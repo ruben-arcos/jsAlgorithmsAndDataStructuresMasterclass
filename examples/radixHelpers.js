@@ -14,11 +14,13 @@
         console.log(getDigit(12345, 5)) // 0
 */
 
+// Helper function to get the digit at the given place value
+
 function getDigit(num, i) {
-    return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10
+  return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
 }
 
-console.log(getDigit(7323, 2)) // 3
+console.log(getDigit(7323, 2)); // 3
 
 /* 
     getDigit(7323, 2)
@@ -50,5 +52,44 @@ console.log(getDigit(7323, 2)) // 3
     For example:
         * Math.pow(2, 3); // Returns 8, because 2^3 = 2 * 2 * 2 = 8
         * Math.pow(10, 2); // Returns 100, because 10^2 = 10 * 10 = 100
+*/
+
+// Helper function to find how many digits are in a number
+
+// 1. Digit count for a single number
+
+function digitCount(num) {
+  if (num === 0) {
+    return 1;
+  }
+  return Math.floor(Math.log10(Math.abs(num))) + 1;
+}
+
+console.log(digitCount(0)); // 1
+console.log(digitCount(1)); // 1
+console.log(digitCount(25)); // 2
+console.log(digitCount(314)); // 3
+
+/*************************************************************************************
+    digitCount(num) - returns the number of digits in num
+     * Math.log10 = 10 to what power give us a number
+         * EXAMPLE 1: 
+            - Math.log10(423) = 2.626340367375043, taking 
+              the floor gives us 2.
+            - Since the floor of Math.log10 gives us the integer 
+              part of the logarithm, it effectively indicates the 
+              count of digits minus 1.
+            - Adding 1 to the result (2 + 1) gives us the correct 
+              count of digits, which is 3.
+
+         * EXAMPLE 2:
+            - Math.log10(21388) = 4.330170175428303,
+              floor it, we get 4
+            - add 1 = 5 digits
+    * If we do Math.log10(0) = negative infinity, so it is
+      imperative to add this special case  
+            if (num === 0) {
+                return 1
+            }
 */
 
