@@ -40,7 +40,7 @@ function pivot(array, startIndex = 0, endIndex = array.length - 1) {
   for (let i = startIndex + 1; i <= endIndex; i++) {
     // If the current element is less than the pivot
     if (array[i] < pivot) {
-        // Increment currentIndex
+      // Increment currentIndex
       currentIndex++;
 
       // Swap the current element with the element at currentIndex
@@ -59,3 +59,40 @@ function pivot(array, startIndex = 0, endIndex = array.length - 1) {
 
 // Return the final position of the pivot in the rearranged array
 console.log(pivot([4, 8, 2, 1, 5, 7, 6, 3]));
+
+// Best solutions
+
+// First version
+
+function pivot2(arr, start = 0, end = arr.length + 1) {
+  // Define a swap function to interchange elements at two indices in an array
+  function swap(array, i, j) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  // Select the pivot element as the one at the starting index
+  let pivot = arr[start];
+  // Initialize swapIdx to the starting index
+  let swapIdx = start;
+
+  // Iterate through the array from start + 1 to the end
+  for (let i = start + 1; i < arr.length; i++) {
+    // If the current element is less than the pivot
+    if (pivot > arr[i]) {
+      // Increment swapIdx
+      swapIdx++;
+      // Swap the current element with the element at swapIdx
+      swap(arr, swapIdx, i);
+    }
+  }
+  // Swap the pivot (element at start) with the element at swapIdx
+  swap(arr, start, swapIdx);
+  // Return the final position of the pivot in the rearranged array
+  return swapIdx;
+}
+
+console.log(pivot2([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]));
+
+
