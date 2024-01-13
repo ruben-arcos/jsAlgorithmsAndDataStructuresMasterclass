@@ -95,4 +95,36 @@ function pivot2(arr, start = 0, end = arr.length + 1) {
 
 console.log(pivot2([3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5]));
 
+// Version with ES2015 Syntax
+function pivot3(arr, start = 0, end = arr.length - 1) {
+  // Define a function swap that takes 3 arguments: an array (arr), and two indices (idx1, idx2)
+  const swap = (arr, idx1, idx2) => {
+    // Swap the values at idx1 and idx2 in the array using destructuring assignment
+    [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
+  };
 
+  // We are assuming the pivot is always the first element
+  // Select the pivot element as the one at the starting index
+  let pivot = arr[start];
+  // Initialize swapIdx to the starting index
+  let swapIdx = start;
+
+  // Iterate through the array from start + 1 to the end
+  for (let i = start + 1; i <= end; i++) {
+    // If the current element is less than the pivot
+    if (pivot > arr[i]) {
+      // Increment swapIdx
+      swapIdx++;
+
+      // Swap the current element with the element at swapIdx
+      swap(arr, swapIdx, i);
+    }
+  }
+
+  // Swap the pivot (element at start) with the element at swapIdx
+  swap(arr, start, swapIdx);
+  // Return the final position of the pivot in the rearranged array
+  return swapIdx;
+}
+
+console.log(pivot3([9, 5, 3, 7, 2, 1, 8, 4, 6]));
