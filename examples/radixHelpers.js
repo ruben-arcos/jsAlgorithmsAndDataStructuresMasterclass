@@ -93,3 +93,24 @@ console.log(digitCount(314)); // 3
             }
 */
 
+// 2. Given an array of numbers, returns the numbers of digits in the largest numbers in the list
+
+function mostDigits(nums) {
+    let maxDigits = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        // Getting maxDigits to equal the maximum between the current value of max digits and digit count of nums i
+        maxDigits = Math.max(maxDigits, digitCount(nums[i]))
+    }
+    return maxDigits
+}
+
+console.log(mostDigits([1234, 56, 78])); // 4
+console.log(mostDigits([1, 1, 11111, 1])); // 5
+console.log(mostDigits([12, 34, 56, 78])); // 2
+
+/**
+    * Math.max 
+        * Pass in 2 numbers ex. Math.max(0, 12), it will always give you the
+          largest number
+ */
