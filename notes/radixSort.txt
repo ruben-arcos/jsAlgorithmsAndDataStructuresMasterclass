@@ -101,3 +101,23 @@ ____________________________________________________________
                 * To finish,we form them again into our list and we're done.
                 * So when I say we form them into the list, I mean we just 
                   take the order that's already in these buckets.
+
+
+Radix Sort Big O 
+___________________________________________________
+⏐ Time              ⏐ Time              ⏐ Time              ⏐ Time              ⏐
+⏐ Complexity    ⏐ Complexity    ⏐ Complexity    ⏐ Complexity    ⏐
+⏐ (Best)            ⏐ (Average)      ⏐ (Worst)          ⏐                       ⏐
+⏐⎯⎯⎯⎯⎯-⎯⏐⎯⎯⎯⎯⎯-⎯⏐⎯⎯⎯⎯⎯-⎯⏐⎯⎯⎯⎯⎯-⎯⏐
+⏐ O(nk)             ⏐ O(nk)             ⏐ O(nk)            ⏐ O(n + k)         ⏐
+⏐⎯⎯⎯⎯⎯-⎯⏐⎯⎯⎯⎯⎯-⎯⏐⎯⎯⎯⎯⎯-⎯⏐⎯⎯⎯⎯⎯-⎯⏐
+
+* Time complexity for best average and worst is O of n k.
+* n is the number of things we're sorting, the number of numbers or integers.
+    - n => length of the array
+* k is the length of those numbers what's often called the word (number of 
+  digits) size for a number
+    - k => number of digits(average)
+* If we have really, really, really long digits, that's important to consider, 
+  because If we have really long numbers, then that does significantly impact 
+  the time.
