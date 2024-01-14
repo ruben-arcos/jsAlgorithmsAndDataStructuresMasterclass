@@ -1,0 +1,103 @@
+Radix Sort
+    * Radix sort is a special sorting algorithm that 
+      doesn't make comparisons and works on 
+      lists of numbers
+    * It never makes comparisons between elements
+    * It exploits the fact that information about the size
+      of a number is encoded in the number of digits
+    * More digits mean larger numbers
+    * When this is actually used, it's used with binary 
+       numbers, any number can be expressedn in binary.
+    * Also, you could take any strings or images if you 
+       wanted to and convert them to binary.
+
+How does it work?
+
+            [1556, 4, 3556, 593, 408, 4386, 902, 7, 8157, 86, 9637, 29]
+                                                            ⬇
+            * We group numbers together based on their rightmost 
+               position. For example, all numbers that have a two in the 
+               rightmost position go in the two bucket and so on. whether 
+               there are two digits, 100 digits, it's just that we're looking at 
+               the rightmost digit.
+            * We are not sorting them within this bucket
+
+____________________________________________________________
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           | 86      |           |           |           |
+|           |           |           |           |           |           | 4386  | 9637  |           |           |
+|           |           |           |           |           |           | 3556  | 8157  |           |           |
+|           |           |  902   |  593   |    4     |           | 1556  |  7       |   408  |    29   |
+----------------------------------------------------------------------------------------------------
+      0         1          2          3          4          5          6          7          8          9
+
+                                                          ⬇
+            [902, 593, 4, 1556, 3556, 4356, 86, 7, 8157, 9637, 408, 29]
+             * We take all sevens, all eights, all nines, and then we form 
+                them back into a list.Keeping the order that they're in 
+                right here.
+                                                          ⬇
+             * Now we repeat the process, except we look at the next
+               digit to the left.
+             * For example 0, 408 has a zero, so it goes in the zero 
+               bucket
+             * numbers, which were one digit numbers, don't have any 
+               digit in that position, we just put them in the zero bucket.
+             * Rememberm we're never comparing numbers to one 
+               another
+____________________________________________________________
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+| 408    |           |           |           |           |           |           |           |           |           |
+|  7       |           |           |           |           | 8157  |           |           |           |           |
+|  4       |           |           |           |           | 3556  |           |           |  86     |           |
+|  902   |           |  29     |  9637 |           | 1556  |           |           |  4386 |  593   |
+----------------------------------------------------------------------------------------------------
+      0         1          2          3          4          5          6          7          8          9
+
+                                                          ⬇
+                [ 902, 4, 7, 408, 29, 9637, 1556, 3556, 8157, 4386, 86, 593 ]
+                                                          ⬇
+                * Repeat process. Now with the third digit to the left
+____________________________________________________________
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+|           |           |           |           |           |           |           |           |           |           |
+| 86      |           |           |           |           |           |           |           |           |           |
+|  29     |           |           |           |           | 593    |           |           |           |           |
+|  7       |           |           |           |           | 3556  |           |           |           |           |
+|  4       | 8157  |           |  4386 | 408    | 1556  | 9637  |           |           |  902   |
+----------------------------------------------------------------------------------------------------
+      0         1          2          3          4          5          6          7          8          9
+                                                          ⬇
+                [ 4, 74 29, 86, 8157, 4386, 408, 1556, 3556, 593, 9637, 902 ]     
+                * The number of times we have to actually do this process 
+                  depends on the largest number, how many digits it has.            
+                * So, if we have a couple of four digit numbers, we have to 
+                  split them up four times. If we had a ten digit number in 
+                  here, we would have to do it ten times.
+                                                          ⬇    
+____________________________________________________________
+|           |           |           |           |           |           |           |           |           |           |
+| 902    |           |           |           |           |           |           |           |           |           |
+| 593    |           |           |           |           |           |           |           |           |           |
+| 408    |           |           |           |           |           |           |           |           |           |
+| 86      |           |           |           |           |           |           |           |           |           |
+|  29     |           |           |           |           |           |           |           |           |           |
+|  7       |           |           |           |           |           |           |           |           |           |
+|  4       | 1556  |           |  3556 | 4386  |           |           |           | 8157  |  9637 |
+----------------------------------------------------------------------------------------------------
+      0         1          2          3          4          5          6          7          8          9
+                                                          ⬇                                                                         
+                [ 4, 7 26, 86, 408, 593, 902, 1556, 3556, 4386, 8157, 9637 ]
+                * So, since none of these numbers 4, 7 26, 86, 408, 593, 
+                  902 have a fourth digit, they go to the zero bucket.
+                * To finish,we form them again into our list and we're done.
+                * So when I say we form them into the list, I mean we just 
+                  take the order that's already in these buckets.

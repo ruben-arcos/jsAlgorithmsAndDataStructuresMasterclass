@@ -11,3 +11,10 @@ Quick Sort
    it the sorted array
 * Once the pivot is positioned appropriately, quick sort 
   can be applied on either side of the pivot
+
+
+Big O
+   * The time complexity of the quicksort algorithm is 
+      typically expressed as O(n log n) on average.
+      However, in the worst-case scenario, it can
+      degrade to O(n^2).
