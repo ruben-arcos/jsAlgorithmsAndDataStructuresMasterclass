@@ -1,0 +1,15 @@
+Data Structures
+- What they have in common is that they are collections of values.
+
+What do they do?
+Data Structures are collections of values, the relationships among them, 
+and the functions or operations that can be applied to the data
+
+Why so many?
+Different data structures excel at different things. some are highly 
+specialized, while others (like arrays) are more generaly used
+
+Why care?
+The more time you spend as a developer, the more likely you'll need to 
+use one of these data structures
+
