@@ -1,15 +1,42 @@
 Data Structures
-- What they have in common is that they are collections of values.
+    - What they have in common is that they are collections of values.
 
-What do they do?
-Data Structures are collections of values, the relationships among them, 
-and the functions or operations that can be applied to the data
+    What do they do?
+    Data Structures are collections of values, the relationships among them, 
+    and the functions or operations that can be applied to the data
 
-Why so many?
-Different data structures excel at different things. some are highly 
-specialized, while others (like arrays) are more generaly used
+    Why so many?
+    Different data structures excel at different things. some are highly 
+    specialized, while others (like arrays) are more generaly used
 
-Why care?
-The more time you spend as a developer, the more likely you'll need to 
-use one of these data structures
+    Why care?
+    The more time you spend as a developer, the more likely you'll need to 
+    use one of these data structures
 
+
+ES2015 Class Syntax Overview
+
+What is a class?
+A blueprint for creating objects with pre-defined properties and methods
+
+JavaScript does not have classes because. JavaScript has never really 
+been truly object oriented and it takes advantage of something called 
+prototype based inheritance or prototypal
+
+The Syntax:
+
+    class Student { // start with capital letter
+        constructor (firstName, lastName, year) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.grade = grade;
+        }
+    }
+
+    let firstStudent = new Student('Ruben', 'Arcos', 90);
+    let secondStudent = new Student('Jack', 'Wood', 90);
+    let grade = new Student()
+
+The method to create new objects must be called constructor
+The class keyword creates a constant, so you can not redifine it.
+Watch out for the syntax as well!
