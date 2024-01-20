@@ -8,7 +8,7 @@
        newly created node
     ● Otherwise set the next property on 
        the tail to be the new node and set 
-       the tail porperty on the lost to be the 
+       the tail porperty on the list to be the 
        newly created node
     ● Increment the length by one
 */
@@ -22,8 +22,8 @@ class Node {
 
 class SinglyLinkedList {
   constructor() {
-    this.val = null;
-    this.next = null;
+    this.head = null;
+    this.tail = null;
     this.length = 0;
   }
   push(val) {
