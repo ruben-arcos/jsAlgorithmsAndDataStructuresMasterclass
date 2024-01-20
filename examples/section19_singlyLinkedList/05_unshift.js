@@ -95,18 +95,28 @@ class SinglyLinkedList {
     // Return the removed node (the original head)
     return currentHead;
   }
+  // Add a new node to the beginning of the linked list
   unshift(val) {
+    // Create a new node with the given value
     let newNode = new Node(val);
+    // Get the current head of the list
     let currentHead = this.head;
 
+    // If there is no current head (empty list),
+    // set both head and tail to the new node
     if (!currentHead) {
       this.head = newNode;
       this.tail = newNode;
+      // If there is a current head,
     } else {
+      // set the new node's next to the current head
       newNode.next = currentHead;
+      // Update the head to be the new node
       this.head = newNode;
     }
+    // Increment the length of the list
     this.length++;
+    // Return the modified linked list
     return this;
   }
 }
