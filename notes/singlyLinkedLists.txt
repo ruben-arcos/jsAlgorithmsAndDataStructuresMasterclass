@@ -1,0 +1,44 @@
+Singly Linked Lists
+
+Objectives
+● Define what a Singly Linked List is
+● Compare and contrast Linked
+    Lists with arrays
+● Implement insertion, removal and
+    traversal methods on Singly 
+    Linked Lists
+
+What is a linked list?
+● No indices
+● A data structure that contains a HEAD, TAIL and LENGTH property
+● Linked Lists consist of nodes, and each NODE has a VALUE and a 
+    POINTER  to another node or null. I
+
+HEAD                      LENGTH = 4                      TAIL
+    ⏐⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⏐
+   4️⃣       -----→      6️⃣      -----→       8️⃣      -----→      2️⃣  ----→              
+             NEXT               NEXT                NEXT          NULL  
+
+● A linked list comprises nodes, each with a VALUE (data) and a 
+   NEXT POINTER pointing to the next node in the sequence.
+● The HEAD points to the first node, the TAIL points to the last 
+   node, and the LENGTH property indicates the number of 
+   nodes.
+●There are no indices; to access an element, you start at the 
+   HEAD and traverse the list by following the NEXT pointers 
+   until you reach the desired node or null.
+● Think of it like a building with no elevators; to move between 
+   floors, you take the stairs. Similarly, to access elements in a 
+   linked list, you traverse from the beginning.
+
+Comparisons with Arrays
+
+Lists
+● Do not have indexes
+● Connected via nodes with a NEXT pointer 
+● Random access is not allowed
+
+Arrays
+● Indexed in order
+● Insertion and deletion can be expensive
+● Can quickly be accessed at a specific index
