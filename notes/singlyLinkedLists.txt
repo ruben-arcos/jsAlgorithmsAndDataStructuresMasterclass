@@ -42,3 +42,36 @@ Arrays
 ● Indexed in order
 ● Insertion and deletion can be expensive
 ● Can quickly be accessed at a specific index
+
+What is traverse?
+● In the context of linked lists or other data structures, "traversing" 
+   refers to the process of moving through the elements (nodes) 
+   of the structure.
+● This movement is typically done one by one, either for 
+   examination, processing, or retrieval of specific information.
+● In the case of a linked list, traversing means moving from one 
+   node to the next.
+● The process starts from the beginning (head) of the linked list and 
+   progresses until a certain condition is met.
+● The traversal process involves visiting each node sequentially.
+● The goal is to perform some operation or locate a specific node 
+   during this sequential visitation.ess involves visiting each node 
+   sequentially in order to perform some operation or locate a specific 
+   node.
+
+Example:
+
+   traverse() {
+      // Initializes a variable current to the head of the linked list, which is the starting point for traversal
+      let current = this.head;
+
+      // Initiates a while loop that continues as long as current is not null. This ensures that the loop iterates through each node in the linked list.
+      while(current) {
+         // Prints the value (or data) of the current node.
+         console.log(current.val);
+         // Moves to the next node in the linked list by updating the current variable to point to the next node.
+         current = current.next;
+      }
+   }
+
+   
