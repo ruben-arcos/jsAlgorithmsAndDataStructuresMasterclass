@@ -74,4 +74,35 @@ Example:
       }
    }
 
-   
+Big O of Singly Linked Lists --> excels at insertion and removal compared to arrays
+
+  Insertion: 
+   ● At the beginning: O(1) - This is because you can add a new node at the 
+      beginning by updating the next pointer of  the new node to point to the current 
+      head and then updating the head to the new node.
+      
+   ● Insertion (at the end): O(N) - This is because to insert at the end, you need to 
+      traverse the entire list to find the last node, and then insert the new node after it.
+
+   Removal:
+   ● At the beginning: O(1) - Similar to insertion, you can remove the first node by 
+      updating the head pointer to the next node.
+
+   Removal 
+   ● At the end: O(N) - To remove the last node, you need to traverse the list to find 
+      the second-to-last node and update its next pointer to null.
+
+   Searching: 
+   ● O(N) - You might need to traverse the entire list in the worst case to find a 
+      specific element.
+
+   Access: 
+   ● O(N) - Similar to searching, you may need to traverse the list to access a 
+      specific element.
+
+RECAP
+● Singly Linked Lists are an excellent alternative to arrays when insertion and deletion 
+   at the beginning are frequently required
+● Arrays contain a built in index whereas Linked Lists do not
+● The idea of a list data structure that consists of nodes is the doundation for other data 
+   structures like Stacks and Queues
