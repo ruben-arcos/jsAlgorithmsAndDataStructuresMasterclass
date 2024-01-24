@@ -258,12 +258,12 @@ class SinglyLinkedList {
   print() {
     let arr = [];
     let current = this.head;
-    
-    while(current) {
-        arr.push(current.val)
-        current = current.next
+
+    while (current) {
+      arr.push(current.val);
+      current = current.next;
     }
-    console.log(arr)
+    console.log(arr);
   }
 }
 
@@ -274,3 +274,53 @@ console.log(list.push(201));
 console.log(list.push(250));
 console.log(list.push(350));
 console.log(list.push(900));
+
+// solution 2
+/**
+    reverse() {
+        let prev = null;
+        let curr = this.head;
+        
+        // 4 steps
+        while(curr) {
+            // step 1: create a temporary next pointer that points to next node after current
+            let next = curr.next
+            // step 2: Make the current node point in reverse
+            curr.next = prev;
+            // step 3: Advance the previous pointer
+            prev = curr
+            // step 4: Advance the current pointer
+            curr = next
+        }
+        this.head = prev
+    }
+    print() {
+        if(this.isEmpty()) {
+            console.log('List is empty)
+        } else {
+            let curr = this.head
+            let listValues = ''
+
+            while(curr) {
+                listValues += `${curr.value}`
+                curr = curr.next
+            }
+            console.log(listValues)
+        }
+  }
+
+  const list = new singlyLinkedList();
+  console.log('List is empty?', list.isEmpty())
+  console.log('List size', list.getSize())
+  console.log(list.print())
+
+
+  console.log(list.insert(10,0))
+  console.log(list.insert(10,0))
+  console.log(list.insert(10,0))
+  console.log(list.insert(10,0))
+  console.log(list.print())
+
+  list.reverse();
+  list.print();
+ */
