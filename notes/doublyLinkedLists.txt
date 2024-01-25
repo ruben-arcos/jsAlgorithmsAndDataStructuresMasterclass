@@ -1,0 +1,21 @@
+Doubly Linked Lists
+
+●Still a length list. There is no indexing
+● Basically, all that we do is add a pointer to the previous node 
+   and the next node so each node points in two directions.
+● ALMOST identical to Singly Linked List, except every node 
+   has ANOTHER pointer, to the PREVIOUS node
+
+                 ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯ ⎯  ⎯ ⎯ 
+                ⏐       next            next           next        ⏐
+    <----- 1️⃣2️⃣  <----->  9️⃣  <----->  5️⃣  <----->  1️⃣4️⃣ ----->
+        null           prev           prev           prev              null
+
+
+Objectives:
+● Construct a Doubly Linked List
+● Compare and contrast Doubly and Singly Linked Lists
+● Implement basic operations on a Doubly Linked List
+
+Comparisons wirh Singly Linked Lists
+More flexibility === More memory
