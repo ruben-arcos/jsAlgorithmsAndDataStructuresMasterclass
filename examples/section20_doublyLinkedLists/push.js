@@ -22,17 +22,26 @@ class DoublyLinkedList {
     this.length = 0;
   }
   push(val) {
+    // Create a new node with the given value
     let newNode = new Node(val);
 
+    // If the linked list is empty, set both head and tail to the new node
     if (this.length === 0) {
+      // If the linked list is not empty:
       this.head = newNode;
       this.tail = newNode;
+      // If the linked list is not empty:
     } else {
+      // 1. Set the next property of the current tail to the new node
       this.tail.next = newNode;
+      // 2. Set the previous property of the new node to the current tail
       newNode.prev = this.tail;
+      // 3. Update the tail to be the new node
       this.tail = newNode;
     }
+    // Increment the length
     this.length++;
+    // Return the updated linked list
     return this;
   }
 }
