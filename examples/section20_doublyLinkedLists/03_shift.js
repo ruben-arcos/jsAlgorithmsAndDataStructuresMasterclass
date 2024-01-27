@@ -90,66 +90,58 @@ class DoublyLinkedList {
       // If yes, update both head and tail to null
       this.head = null;
       this.tail = null;
-    }
-
-    // Update the head to be the next node after the old head
-    this.head = oldHead.next;
-
-    // Disconnect the old head from the list by updating its prev and next pointers
-    oldHead.prev = null;
-    oldHead.next = null;
-
-    // Decrement the length as a node is being removed
-    this.length--;
-
-    // Return the removed node (old head)
-    return oldHead;
-  }
-}
-
-/**
- 
-
-
-shift() {
-    // If length is 0, return undefined
-    if (this.length === 0) {
-      return undefined;
-    }
-
-    // Store the current head property in a variable
-    let oldHead = this.head;
-
-    // If the length is one
-    if (this.length === 1) {
-      // Set the head to be null
-      this.head = null;
-      // Set the tail to be null
-      this.tail = null;
-      // Update the head to be the next of the old head
+    } else {
+      // Update the head to be the next node after the old head
       this.head = oldHead.next;
-      // Disconnect the old head from the list
-      // Set the head's prev property to null
+
+      // Disconnect the old head from the list by updating its prev and next pointers
       oldHead.prev = null;
-      // Set the old head's next to null
       oldHead.next = null;
-      // Decrement the length
+
+      // Decrement the length as a node is being removed
       this.length--;
-      // Return old head
+
+      // Return the removed node (old head)
       return oldHead;
     }
   }
+}
 
+let list = new DoublyLinkedList();
 
+console.log(list.push("Harry"));
+console.log(list.push("Ron"));
+console.log(list.push("Hermione"));
 
+/**
+ my solution: 
 
+    shift() {
+        // If length is 0, return undefined
+        if (this.length === 0) {
+        return undefined;
+        }
 
+        // Store the current head property in a variable
+        let oldHead = this.head;
 
-
-
-
-
-
-
-
- */
+        // If the length is one
+        if (this.length === 1) {
+        // Set the head to be null
+        this.head = null;
+        // Set the tail to be null
+        this.tail = null;
+        // Update the head to be the next of the old head
+        this.head = oldHead.next;
+        // Disconnect the old head from the list
+        // Set the head's prev property to null
+        oldHead.prev = null;
+        // Set the old head's next to null
+        oldHead.next = null;
+        // Decrement the length
+        this.length--;
+        // Return old head
+        return oldHead;
+        }
+    }
+*/
