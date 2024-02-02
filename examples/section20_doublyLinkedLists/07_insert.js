@@ -158,26 +158,42 @@ class DoublyLinkedList {
     // If the GET method returns null, return false
     return false;
   }
+  // Insert a new node at a specified index with the given value
   insert(index, value) {
+    // Check if the index is out of bounds
     if (index < 0 || index >= this.length) {
       return false;
     }
 
+    // Insert at the beginning of the list (index 0)
     if (index === 0) {
-      return this.unshift(value);
+      // Use the existing unshift method for efficient insertion at the beginning
+      return !this.unshift(value);
+      // Insert at the end of the list (index equals the length)
     } else if (index === this.length) {
-      return this.push(value);
+      // Use the existing push method for efficient insertion at the end
+      return !this.push(value);
+      // Insert in the middle of the list
     } else {
+      // Create a new node with the provided value
       let newNode = new Node(value);
+      // Retrieve the node at the index before the insertion point
       let beforeNode = this.get(index - 1);
+      // Retrieve the node that originally followed beforeNode
       let afterNode = beforeNode.next;
 
-      beforeNode.next = newNode;
-      newNode.prev = beforeNode;
+      // Link the new node to the rest of the list after the insertion point
       newNode.next = afterNode;
-      afterNode.prev = newNode;
+      newNode.prev = beforeNode;
 
+      // Update the 'prev' pointer of the node following the insertion point
+      afterNode.prev = newNode;
+      // Update the 'next' pointer of the node before the insertion point to the new node
+      beforeNode.next = newNode;
+
+      // Increment the length to reflect the successful insertion
       this.length++;
+      // Return true to indicate a successful insertion
       return true;
     }
   }
@@ -188,3 +204,54 @@ let list = new DoublyLinkedList();
 console.log(list.push("Regina"));
 console.log(list.push("Gretchen"));
 console.log(list.push("Karen"));
+
+/**
+ * my solution
+
+    // Insert a new node at a specified index with the given value
+    insert(index, value) {
+    // Check if the index is out of bounds
+    if (index < 0 || index > this.length) {
+        return false;
+    }
+
+    // Create a new node with the provided value
+    let newNode = new Node(value);
+
+    // Insert at the beginning of the list (index 0)
+    if (index === 0) {
+        // Use the existing unshift method for efficient insertion at the beginning
+        this.unshift(value);
+        return true;
+    } 
+    // Insert at the end of the list (index equals the length)
+    else if (index === this.length) {
+        // Use the existing push method for efficient insertion at the end
+        this.push(value);
+        return true;
+    } 
+    // Insert in the middle of the list
+    else {
+        // Retrieve the node at the index before the insertion point
+        let prevNode = this.get(index - 1);
+
+        // Link the new node to the rest of the list after the insertion point
+        newNode.next = prevNode.next;
+
+        // Link the new node backward to the node before the insertion point
+        newNode.prev = prevNode;
+
+        // Update the 'prev' pointer of the node following the insertion point
+        prevNode.next.prev = newNode;
+
+        // Update the 'next' pointer of the node before the insertion point to the new node
+        prevNode.next = newNode;
+
+        // Increment the length to reflect the successful insertion
+        this.length++;
+
+        // Return true to indicate a successful insertion
+        return true;
+    }
+    }
+*/
