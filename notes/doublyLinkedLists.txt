@@ -47,3 +47,23 @@ Setting up the node class
             this.length = 0;
         }
     }
+
+Big O of Doubly Linked Lists
+
+    Insertion: 
+    ● In a doubly linked list, insertion at the beginning or end of the list is indeed O(1) because you
+        have direct access to the head and tail nodes. However, insertion in the middle of the list requires traversing to the desired position, which makes it O(N), not O(1) in all cases.
+
+    Removal:
+    ● Removal from the beginning or end of the list is O(1) for the same reason as insertion. Removal
+       from the middle of the list also requires traversing to the specific node, so it's O(N) in that case.
+       
+    Searching:
+    ● Searching in a doubly linked list involves traversing the list from either the head or tail node
+       until the target node is found. As a result, searching is O(N), where N is the number of nodes in the list. The factor of 1/2 doesn't affect the overall time complexity analysis, so it's still O(N).
+        
+        *** Technically searching is O(N/2), but thats still O(N)
+
+    Access:
+    ● Accessing an element by index in a doubly linked list requires traversing from either the head or
+       tail node until the desired index is reached. Since this traversal may need to cover the entire list in the worst case, access in a doubly linked list is O(N).
