@@ -67,3 +67,9 @@ Big O of Doubly Linked Lists
     Access:
     ● Accessing an element by index in a doubly linked list requires traversing from either the head or
        tail node until the desired index is reached. Since this traversal may need to cover the entire list in the worst case, access in a doubly linked list is O(N).
+
+RECAP
+● Doubly Linked Lists are almost identical to Singly Linked Lists except there is an additional pointer
+    to previous nodes
+● Better than Singly Linked Lists for finding nodes and can be done in half the time!
+● However, they do take up more memory considering the extra pointer
