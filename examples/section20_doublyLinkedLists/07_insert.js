@@ -206,7 +206,7 @@ console.log(list.push("Gretchen"));
 console.log(list.push("Karen"));
 
 /**
- * my solution
+  my solution
 
     // Insert a new node at a specified index with the given value
     insert(index, value) {
